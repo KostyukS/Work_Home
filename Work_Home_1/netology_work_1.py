@@ -3,10 +3,11 @@ def dir_cook(file_obj):
     values = []
     cook_book = {}
     with open(file_obj) as file:
-        dish = file.readline()
+        dish = file.readline().strip()
         count = file.readline()
+        cook_book[dish] = []
         for i in range(int(count)):
-            values += file.readline().split(' | ')
+            values += file.readline().strip().split(' | ')
             dictionary = dict(zip(keys, values))
             cook_book[dish] += [dictionary]
             values = []
