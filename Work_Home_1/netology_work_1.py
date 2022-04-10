@@ -39,4 +39,4 @@ def get_shop_list_by_dishes(dishes, person_count):
     return dict_ingr
 
 
-print(get_shop_list_by_dishes(['Запеченный картофель','Омлет'], 3))
+print(get_shop_list_by_dishes(['Запеченный картофель', 'Омлет'], 3))
