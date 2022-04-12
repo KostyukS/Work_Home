@@ -12,23 +12,19 @@ def sort_file(list_obj):
             sorted_keys = sorted(dict_count, key=dict_count.get)
             for i in sorted_keys:
                 sorted_dict[i] = dict_count[i]
-
+    open('Result_file.txt', 'w').close()
     for item in sorted_dict:
-
-        with open(item) as file:
+        with open(item) as file1:
             name = item
             cnt = sorted_dict[item]
-            content = file.read()
-        with open('Result_file.txt', 'a') as file1:
-            file1.write(name + '\n')
-            file1.write(str(cnt) + '\n')
-            file1.write(content)
+            content = file1.read()
+        with open('Result_file.txt', 'a') as file2:
+            file2.write(name + '\n')
+            file2.write(str(cnt) + '\n')
+            file2.write(content + '\n' * 2)
 
 
-
+sort_file(list_files)
 
 with open('Result_file.txt') as file:
-     print(file.read())
-
-
-#print(sort_file(list_files))
+    print(file.read())
